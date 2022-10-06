@@ -1,0 +1,102 @@
+<div class="container-md mt-5">
+  <div class="form-container">
+    <section class="project-form">
+      <div class="class text-center">
+        <h3>{{ constant.APP_NAME }}</h3>
+      </div>
+      <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-6">
+
+            <label for="inputGroup">Group*</label>
+            <input formControlName="group" type="text" class="form-control" id="txtGroup"
+              placeholder="Enter Your Project Group">
+            <div class="container-error-message" *ngIf="group?.errors?.['required'] && (group?.dirty || group?.touched || invalidForm)">
+                Group {{ constant.VALIDATE_MESSAGE_REQUIRED }}
+            </div>
+            <div class="container-error-message" *ngIf="group?.errors?.['minlength'] && (group?.dirty || group?.touched || invalidForm)">
+                Group {{ constant.VALIDATE_MESSAGE_MIN_LENGTH }} {{ group?.errors?.['minlength']?.requiredLength }} characters.
+            </div>
+            <div class="container-error-message" *ngIf="group?.errors?.['maxlength'] && (group?.dirty || group?.touched || invalidForm)">
+                Group {{ constant.VALIDATE_MESSAGE_MAX_LENGTH }} {{ group?.errors?.['maxlength']?.requiredLength }} characters.
+            </div>
+
+            <label for="inputArtifact">Artifact*</label>
+            <input formControlName="artifact" type="text" class="form-control" id="txtArtifact"
+              placeholder="Enter Your Project Artifact">
+            <div class="container-error-message" *ngIf="artifact?.errors?.['required'] && (artifact?.dirty || artifact?.touched || invalidForm)">
+                Artifact {{ constant.VALIDATE_MESSAGE_REQUIRED }}
+            </div>
+            <div class="container-error-message" *ngIf="artifact?.errors?.['minlength'] && (artifact?.dirty || artifact?.touched || invalidForm)">
+                Artifact {{ constant.VALIDATE_MESSAGE_MIN_LENGTH }} {{ artifact?.errors?.['minlength']?.requiredLength }} characters.
+            </div>
+            <div class="container-error-message" *ngIf="artifact?.errors?.['maxlength'] && (artifact?.dirty || artifact?.touched || invalidForm)">
+                Artifact {{ constant.VALIDATE_MESSAGE_MAX_LENGTH }} {{ artifact?.errors?.['maxlength']?.requiredLength }} characters.
+            </div>
+
+            <label for="inputName">Name*</label>
+            <input formControlName="name" type="text" class="form-control" id="txtName"
+              placeholder="Enter Your Project Name">
+            <div class="container-error-message" *ngIf="name?.errors?.['required'] && (name?.dirty || name?.touched || invalidForm)">
+                Name {{ constant.VALIDATE_MESSAGE_REQUIRED }}
+            </div>
+            <div class="container-error-message" *ngIf="name?.errors?.['minlength'] && (name?.dirty || name?.touched || invalidForm)">
+                Name {{ constant.VALIDATE_MESSAGE_MIN_LENGTH }} {{ name?.errors?.['minlength']?.requiredLength }} characters.
+            </div>
+            <div class="container-error-message" *ngIf="name?.errors?.['maxlength'] && (name?.dirty || name?.touched || invalidForm)">
+                Name {{ constant.VALIDATE_MESSAGE_MAX_LENGTH }} {{ name?.errors?.['maxlength']?.requiredLength }} characters.
+            </div>
+
+          </div>
+          <div class="col-6">
+
+            <label for="inputDescription">Description*</label>
+            <input formControlName="description" type="text" class="form-control" id="txtDescription"
+              placeholder="Enter Your Project Description">
+            <div class="container-error-message" *ngIf="description?.errors?.['required'] && (description?.dirty || description?.touched || invalidForm)">
+                Description {{ constant.VALIDATE_MESSAGE_REQUIRED }}
+            </div>
+            <div class="container-error-message" *ngIf="description?.errors?.['minlength'] && (description?.dirty || description?.touched || invalidForm)">
+                Description {{ constant.VALIDATE_MESSAGE_MIN_LENGTH }} {{ description?.errors?.['minlength']?.requiredLength }} characters.
+            </div>
+            <div class="container-error-message" *ngIf="description?.errors?.['maxlength'] && (description?.dirty || description?.touched || invalidForm)">
+                Description {{ constant.VALIDATE_MESSAGE_MAX_LENGTH }} {{ description?.errors?.['maxlength']?.requiredLength }} characters.
+            </div>
+
+            <label for="inputPackageName">Package Name*</label>
+            <input formControlName="packageName" type="text" class="form-control" id="txtPackageName"
+              placeholder="Enter Your Project Package Name">
+            <div class="container-error-message" *ngIf="packageName?.errors?.['required'] && (packageName?.dirty || packageName?.touched || invalidForm)">
+                Package Name {{ constant.VALIDATE_MESSAGE_REQUIRED }}
+            </div>
+            <div class="container-error-message" *ngIf="packageName?.errors?.['minlength'] && (packageName?.dirty || packageName?.touched || invalidForm)">
+                Package Name {{ constant.VALIDATE_MESSAGE_MIN_LENGTH }} {{ packageName?.errors?.['minlength']?.requiredLength }} characters.
+            </div>
+            <div class="container-error-message" *ngIf="packageName?.errors?.['maxlength'] && (packageName?.dirty || packageName?.touched || invalidForm)">
+                Package Name {{ constant.VALIDATE_MESSAGE_MAX_LENGTH }} {{ packageName?.errors?.['maxlength']?.requiredLength }} characters.
+            </div>
+
+            <label for="inputAuthor">Author*</label>
+            <input formControlName="author" type="text" class="form-control" id="txtAuthor"
+              placeholder="Enter Your Project Author">
+            <div class="container-error-message" *ngIf="author?.errors?.['required'] && (author?.dirty || author?.touched || invalidForm)">
+                Author {{ constant.VALIDATE_MESSAGE_REQUIRED }}
+            </div>
+            <div class="container-error-message" *ngIf="author?.errors?.['minlength'] && (author?.dirty || author?.touched || invalidForm)">
+                Author {{ constant.VALIDATE_MESSAGE_MIN_LENGTH }} {{ author?.errors?.['minlength']?.requiredLength }} characters.
+            </div>
+            <div class="container-error-message" *ngIf="author?.errors?.['maxlength'] && (author?.dirty || author?.touched || invalidForm)">
+                Author {{ constant.VALIDATE_MESSAGE_MAX_LENGTH }} {{ author?.errors?.['maxlength']?.requiredLength }} characters.
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="d-grid mt-4">
+            <button id="btnSubmit" type="submit" class="btn btn-primary">Create Project</button>
+          </div>
+        </div>
+
+      </form>
+    </section>
+  </div>
+</div>
